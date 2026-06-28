@@ -1,0 +1,26 @@
+{
+  "title": "仓鼠小窝 🐹",
+  "description": "欢迎来到仓鼠的小窝！",
+  "startDate": "2026-06-20",
+  "mood": {
+    "emoji": "💕",
+    "text": "今天心情很好",
+    "quote": "少壮不努力，老大哦呐呐呐！",
+    "quoteAuthor": "0"
+  },
+  "images": {
+    "avatar": "/assets/images/1782633365262_1wxltiwq.jpg",
+    "banner": "/assets/images/1782633945974_27asbhv4.webp",
+    "sponsorQr": "/assets/images/1782633550283_0kt40w9g.png"
+  },
+  "sponsor": {
+    "title": "请仓鼠吃颗瓜子 🥜",
+    "description": "如果喜欢小窝的话，请仓鼠吃颗瓜子吧~",
+    "note": "你的支持是仓鼠更新的最大动力！",
+    "tags": [
+      "瓜子",
+      "面包虫",
+      "小奶酪"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章详情 - 仓鼠小窝 🐹</title>
+  <meta name="description" content="仓鼠小窝 - 可爱少女风博客">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Long+Cang&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐹</text></svg>">
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=19">
+</head>
+<body class="article-page">
+  <div class="bg-decoration" aria-hidden="true">
+    <span class="float-deco" style="--delay:0s;--left:5%;--size:28px">🐾</span>
+    <span class="float-deco" style="--delay:3s;--left:15%;--size:22px">💕</span>
+    <span class="float-deco" style="--delay:6s;--left:28%;--size:26px">✨</span>
+    <span class="float-deco" style="--delay:1.5s;--left:42%;--size:24px">🐾</span>
+    <span class="float-deco" style="--delay:4.5s;--left:58%;--size:30px">🌟</span>
+    <span class="float-deco" style="--delay:2s;--left:72%;--size:26px">💕</span>
+    <span class="float-deco" style="--delay:5s;--left:85%;--size:28px">🐾</span>
+    <span class="float-deco" style="--delay:7s;--left:93%;--size:22px">✨</span>
+  </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <a href="/" class="nav-left">
+        <div class="avatar-wrap">
+          <img class="avatar" src="https://img.cdn1.vip/i/6a41158f14396_1782650255.webp" alt="仓鼠头像">
+          <span class="avatar-ring"></span>
+        </div>
+        <div class="nav-info">
+          <h1 class="site-name">仓鼠小窝</h1>
+          <p class="site-intro">欢迎来到仓鼠小窝！ 🐹💕</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <div class="daily-quote" id="dailyQuote">
+        <span class="quote-mark quote-mark-left">❝</span>
+        <span class="quote-text" id="hitokoto-text">正在加载每日一言...</span>
+        <span class="quote-mark quote-mark-right">❞</span>
+        <p class="quote-from" id="hitokoto-from">—— 每日一言</p>
+      </div>
+      <div class="busuanzi-stats">
+        <span class="stats-icon"> Visitor </span>
+        您是第 <span id="busuanzi_value_site_pv" class="stats-number">?</span> 个访问本站的小伙伴！！
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="hamster-sticker" id="hamsterBtn" title="点我有惊喜！" aria-label="仓鼠贴纸互动按钮">
+        <span class="sticker-emoji">🐹</span>
+        <span class="sticker-shadow"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="article-main">
+    <article class="article-container" id="articleContainer">
+      <div class="article-loading">
+        <span class="loading-hamster">🐹</span>
+        <p>小仓鼠正在搬运文章...</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-paw">🐾 🐾 🐾</div>
+      <p class="footer-copyright">
+        © 2026 仓鼠小窝 · 用 💕 制作 · All Rights Reserved
+      </p>
+      <div class="footer-runtime">
+        <span class="runtime-label">🐹 小窝已运行</span>
+        <span class="runtime-time" id="siteRuntime">0 天 0 时 0 分 0 秒</span>
+      </div>
+      <p class="footer-quote">愿你被这个世界温柔以待 ✨</p>
+    </div>
+  </footer>
+
+  <div class="hamster-modal" id="hamsterModal">
+    <div class="hamster-modal-content">
+      <span class="modal-close" id="modalClose">×</span>
+      <div class="modal-hamster">🐹</div>
+      <h3 class="modal-title">你发现啦！</h3>
+      <p class="modal-text">恭喜你找到了隐藏的仓鼠！<br>送你一颗好运瓜子 🌻<br>愿你今天也开开心心~</p>
+      <button class="modal-btn" id="modalBtn">收到啦 💕</button>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+    <span class="back-top-icon">☁️</span>
+    <span class="back-top-text">回顶部</span>
+  </button>
+
+  <script src="/assets/js/article.js"></script>
+</body>
+</html>

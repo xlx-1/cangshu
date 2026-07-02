@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仓鼠小窝 🐹</title>
+  <meta name="description" content="一个以仓鼠为主题的博客，记录生活中的小确幸">
+
+  <!-- Google Fonts: 站酷快乐体 + 龙藏体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Long+Cang&display=swap" rel="stylesheet">
+
+  <!-- Favicon: 仓鼠 emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐹</text></svg>">
+
+  <!-- 不蒜子统计 -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=18">
+</head>
+<body>
+  <!-- 背景装饰：飘动的爪印和爱心 -->
+  <div class="bg-decoration" aria-hidden="true">
+    <span class="float-deco" style="--delay:0s;--left:5%;--size:28px">🐾</span>
+    <span class="float-deco" style="--delay:3s;--left:15%;--size:22px">💕</span>
+    <span class="float-deco" style="--delay:6s;--left:28%;--size:26px">✨</span>
+    <span class="float-deco" style="--delay:1.5s;--left:42%;--size:24px">🐾</span>
+    <span class="float-deco" style="--delay:4.5s;--left:58%;--size:30px">🌟</span>
+    <span class="float-deco" style="--delay:2s;--left:72%;--size:26px">💕</span>
+    <span class="float-deco" style="--delay:5s;--left:85%;--size:28px">🐾</span>
+    <span class="float-deco" style="--delay:7s;--left:93%;--size:22px">✨</span>
+  </div>
+
+  <!-- ============ 导航栏 ============ -->
+  <nav class="navbar" id="navbar">
+    <!-- 左侧：头像 + 名称简介 -->
+    <div class="nav-left">
+      <div class="avatar-wrap">
+        <img class="avatar" src="https://img.cdn1.vip/i/6a41158f14396_1782650255.webp" alt="仓鼠头像">
+        <span class="avatar-ring"></span>
+      </div>
+      <div class="nav-info">
+        <h1 class="site-name">仓鼠小窝</h1>
+        <p class="site-intro">欢迎来到仓鼠的小窝！ 🐹💕</p>
+      </div>
+    </div>
+
+    <!-- 中部：每日一言 + 不蒜子统计 -->
+    <div class="nav-center">
+      <div class="daily-quote" id="dailyQuote">
+        <span class="quote-mark quote-mark-left">❝</span>
+        <span class="quote-text" id="hitokoto-text">正在加载每日一言...</span>
+        <span class="quote-mark quote-mark-right">❞</span>
+        <p class="quote-from" id="hitokoto-from">—— 每日一言</p>
+      </div>
+      <div class="busuanzi-stats">
+        <span class="stats-icon"> Visitor </span>
+        您是第 <span id="busuanzi_value_site_pv" class="stats-number">?</span> 个访问本站的小伙伴！！
+      </div>
+    </div>
+
+    <!-- 右侧：仓鼠贴纸隐藏按钮 -->
+    <div class="nav-right">
+      <button class="hamster-sticker" id="hamsterBtn" title="点我有惊喜！" aria-label="仓鼠贴纸互动按钮">
+        <span class="sticker-emoji">🐹</span>
+        <span class="sticker-shadow"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ 横幅区 ============ -->
+  <section class="banner-section">
+    <div class="banner-content">
+      <!-- 左侧：横幅图片 -->
+      <div class="banner-image-wrap">
+        <img class="banner-image" src="https://img.cdn1.vip/i/6a41158818550_1782650248.jpg" alt="仓鼠横幅">
+        <div class="banner-overlay"></div>
+        <span class="banner-badge"></span>
+      </div>
+      <!-- 右侧：心情卡片 -->
+      <div class="mood-card">
+        <div class="mood-header">
+          <h2 class="mood-title">今日心情</h2>
+          <span class="mood-date" id="moodDate"></span>
+        </div>
+        <div class="mood-emoji-wrap">
+          <span class="mood-emoji">🥰</span>
+          <span class="mood-emoji-bg"></span>
+        </div>
+        <p class="mood-text"></p>
+        <blockquote class="mood-quote">
+          <span class="quote-deco">"</span>
+          <span class="quote-text"></span>
+          <span class="quote-deco">"</span>
+        </blockquote>
+        <cite class="quote-author"></cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 文章目录 ============ -->
+  <section class="articles-section">
+    <div class="section-header">
+      <h2 class="section-title"></h2>
+      <p class="section-subtitle"></p>
+    </div>
+    <!-- 文章列表：限制高度，超出滚动 -->
+    <div class="articles-list" id="articlesList">
+      <!-- 文章卡片由 JS 动态渲染 -->
+      <div class="articles-loading">
+        <span class="loading-hamster">🐹</span>
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 赞助区 ============ -->
+  <section class="sponsor-section">
+    <div class="sponsor-card">
+      <!-- 左侧：收款码 -->
+      <div class="qr-wrap">
+        <img class="qr-code" src="https://img.cdn1.vip/i/6a41160b47e55_1782650379.webp" alt="赞助收款码">
+        <span class="qr-frame-deco qr-corner-tl"></span>
+        <span class="qr-frame-deco qr-corner-tr"></span>
+        <span class="qr-frame-deco qr-corner-bl"></span>
+        <span class="qr-frame-deco qr-corner-br"></span>
+      </div>
+      <!-- 右侧：乞讨文案 -->
+      <div class="sponsor-text">
+        <h2 class="sponsor-title"></h2>
+        <p class="sponsor-desc"></p>
+        <p class="sponsor-note"></p>
+        <div class="sponsor-tags"></div>
+      </div>
+      <!-- 飘动爱心装饰 -->
+      <span class="sponsor-heart" style="--delay:0s;--left:10%">💕</span>
+      <span class="sponsor-heart" style="--delay:1.5s;--left:30%">💖</span>
+      <span class="sponsor-heart" style="--delay:3s;--left:60%">💕</span>
+      <span class="sponsor-heart" style="--delay:4.5s;--left:80%">💖</span>
+    </div>
+  </section>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-paw">🐾 🐾 🐾</div>
+      <p class="footer-copyright">
+        © 2026 仓鼠小窝 · 用 💕 制作 · All Rights Reserved
+      </p>
+      <div class="footer-runtime">
+        <span class="runtime-label">🐹 小窝已运行</span>
+        <span class="runtime-time" id="siteRuntime">0 天 0 时 0 分 0 秒</span>
+      </div>
+      <p class="footer-quote">愿你被这个世界温柔以待 ✨</p>
+    </div>
+  </footer>
+
+  <!-- 仓鼠互动彩蛋弹窗 -->
+  <div class="hamster-modal" id="hamsterModal">
+    <div class="hamster-modal-content">
+      <span class="modal-close" id="modalClose">×</span>
+      <div class="modal-hamster">🐹</div>
+      <h3 class="modal-title">你发现啦！</h3>
+      <p class="modal-text">恭喜你找到了隐藏的仓鼠！<br>送你一颗好运瓜子 🌻<br>愿你今天也开开心心~</p>
+      <button class="modal-btn" id="modalBtn">收到啦 💕</button>
+    </div>
+  </div>
+
+  <!-- ============ 仓鼠AI助手 ============ -->
+  <!-- 趴在网页底部的仓鼠形象（点击打开聊天） -->
+  <div class="ai-hamster-wrap" id="aiHamsterBtn" role="button" aria-label="仓鼠AI助手" tabindex="0">
+    <img class="ai-hamster-img" src="/assets/images/ai.png" alt="仓小鼠">
+  </div>
+
+  <!-- 聊天对话框 -->
+  <div class="ai-chat-widget" id="aiChatWidget">
+    <div class="ai-chat-header">
+      <div class="ai-chat-info">
+        <h3 class="ai-chat-name">仓小鼠</h3>
+        <p class="ai-chat-status" id="aiChatStatus">在线中 · 随时陪你聊天~</p>
+      </div>
+      <div class="ai-chat-header-actions">
+        <button class="ai-chat-clear" id="aiChatClear" aria-label="清空记忆" title="清空聊天记忆">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+        </button>
+        <button class="ai-chat-close" id="aiChatClose" aria-label="关闭">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <!-- 消息由JS动态渲染 -->
+    </div>
+    <div class="ai-chat-rate" id="aiChatRate">
+      <span class="rate-text">剩余消息：<span id="rateRemaining">10</span>/10</span>
+      <span class="rate-timer" id="rateTimer" style="display:none">冷却中...<span id="rateCountdown">60</span>s</span>
+    </div>
+    <div class="ai-chat-input-wrap">
+      <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="和仓鼠说点什么~" maxlength="200" autocomplete="off">
+      <button class="ai-chat-send" id="aiChatSend" aria-label="发送">
+        <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- AI消息输入遮罩（手机端点击遮罩关闭） -->
+  <div class="ai-chat-overlay" id="aiChatOverlay"></div>
+
+  <script src="/assets/js/main.js?v=15"></script>
+</body>
+</html>

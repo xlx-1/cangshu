@@ -1,10 +1,18 @@
 [
   {
-    "id": "a1b2c3d4",
-    "title": "欢迎来到仓鼠小窝 🐹",
-    "summary": "欢迎来到我的小窝！这里是一只可爱仓鼠的家，记录着生活中的点点滴滴~",
-    "post": "https://raw.githubusercontent.com/xlx-1/cangshu/main/posts/welcome.md",
-    "cover": "https://raw.githubusercontent.com/xlx-1/cangshu/main/home/assets/images/1782637189566_2fsz0g5h.jpg",
-    "updated_at": "2026-06-20"
+    "id": "1783057891249",
+    "title": "重生之拯救我的破碎同桌",
+    "summary": "书名：重生之拯救我的破碎同桌 作者：老大不爱开飞机 校园/纯爱/招笑/重生/日常",
+    "post": "https://raw.githubusercontent.com/xlx-1/cangshu/main/posts/1783057891249.md",
+    "cover": "https://raw.githubusercontent.com/xlx-1/cangshu/main/assets/images/1783057725671_vh3p2zdj.jpg",
+    "updated_at": "2026-07-03 05:51:33"
+  },
+  {
+    "id": "1782646988828",
+    "title": "漫画万人嫌自救指南",
+    "summary": "（有论坛、马甲、幕后黑手要素） 治疗系圣女肖玲馨刚拯救了一个异能小分队后，突然被系统告知，这个世界是一本漫画。　　 好消息：她是漫画的女主。　　 坏消息：她是一个让无数读者联名，希望作者删除的万人嫌女主！",
+    "post": "https://raw.githubusercontent.com/xlx-1/cangshu/main/posts/1782646988828.md",
+    "cover": "https://github.com/xlx-1/cangshu/blob/main/assets/images/1783050816370_dbr32bmf.png",
+    "updated_at": "2026-07-03 03:55:36"
   }
 ]
